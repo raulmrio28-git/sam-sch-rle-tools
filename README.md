@@ -16,6 +16,7 @@ Differences:
 -the length of data is not maxed out to 255
 -does not decompress data by going back n words, rather it decompresses from the n'th word
 
-For compression, please note that the algorithm is a port of gamecompress's cmp-carmackize.js's obscure function, but there are some things it can't do:
+For compression, please note that the algorithm is a port of gamecompress's cmp-carmackize.js's obscure function, albeit modified to have a result that can be decoded properly.
+There are some things it can't do:
 -Compress with previous image's data
 -Have a proper offset for the last run when data has many runs (e.g. if ffff is repeated 3c34 times, the last run doesn't have offset 0)
