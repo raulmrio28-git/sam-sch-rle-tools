@@ -5,6 +5,7 @@
 # Functions
 Compress(input, output, length, isrgb444), where input is 16bpp image buffer as unsigned short pointer, output is compressed result as unsigned short pointer, length is input buffer size (not full size, it is divided by 2) as int and isrgb444 bool to determine if signal byte is 0xffff and not between 0xfff0 and 0xffff (generally used for RGB444-type images).
 Decompress(input, input2, output, length), where input is compressed image data as unsigned short pointer, input2 is previously decoded frame (useful for some frames where they reuse pixels from previous image) as unsigned short pointer, output is decompressed result as unsigned short pointer and length of input buffer size (not full size, it is divided by 2) as int
+Both functions return output size
 
 # Notes
 The compression is similar to the Carmack compression, but has differences to accomodate the "SCH RLE" format specification.
